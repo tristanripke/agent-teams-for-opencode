@@ -1,0 +1,59 @@
+{
+  "name": "agent-teams-for-opencode",
+  "version": "0.2.0",
+  "license": "MIT",
+  "description": "A native OpenCode V2 plugin that lets your sessions find each other, message each other and work in teams across projects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tristanripke/agent-teams-for-opencode.git"
+  },
+  "homepage": "https://github.com/tristanripke/agent-teams-for-opencode#readme",
+  "bugs": {
+    "url": "https://github.com/tristanripke/agent-teams-for-opencode/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./dist/server.js",
+    "./rpc": "./dist/rpc.js",
+    "./tui": "./dist/tui.js",
+    "./gui-experimental": "./dist/gui-experimental.cjs"
+  },
+  "files": [
+    "src",
+    "dist",
+    "LICENSE",
+    "THIRD_PARTY_LICENSES",
+    "README.md",
+    "docs"
+  ],
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "build": "vite build && node build.mjs",
+    "preview": "node scripts/ui-preview.mjs",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "solid-js": "^1.9.0"
+  },
+  "peerDependencies": {
+    "@opencode/plugin": ">=2.2.5 <3",
+    "effect": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@opencode/plugin": {
+      "optional": true
+    },
+    "effect": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@opencode/plugin": "2.2.5",
+    "@opencode/schema": "2.2.5",
+    "effect": "^4.0.6",
+    "esbuild": "^0.28.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.0.0",
+    "vite-plugin-solid": "^2.11.0"
+  }
+}
